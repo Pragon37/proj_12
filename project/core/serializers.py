@@ -7,6 +7,7 @@ class ClientSerializer(ModelSerializer):
     class Meta:
         model = Client
         fields = [
+            "pk",
             "firstName",
             "lastName",
             "email",
@@ -23,6 +24,7 @@ class ContractSerializer(ModelSerializer):
     class Meta:
         model = Contract
         fields = [
+            "pk",
             "salesContact",
             "client",
             "dateCreated",
@@ -37,6 +39,7 @@ class EventSerializer(ModelSerializer):
     class Meta:
         model = Event
         fields = [
+            "pk",
             "client",
             "dateCreated",
             "dateUpdated",

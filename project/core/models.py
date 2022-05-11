@@ -26,7 +26,7 @@ class Client(models.Model):
     )
 
     def __str__(self):
-        return f"{self.firstName, self.lastName, self.SalesContact}"
+        return f"{self.pk, self.firstName, self.lastName, self.salesContact}"
 
 
 class Contract(models.Model):
@@ -44,7 +44,7 @@ class Contract(models.Model):
     paiementDue = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"{self.salesContact, self.client, self.amount}"
+        return f"{self.pk, self.salesContact, self.client, self.amount}"
 
 
 class Event(models.Model):
@@ -67,4 +67,4 @@ class Event(models.Model):
     notes = models.TextField(max_length=8192, blank=True)
 
     def __str__(self):
-        return f"{self.supportContact, self.client, self.eventStatus}"
+        return f"{self.pk, self.supportContact, self.client, self.eventStatus}"
