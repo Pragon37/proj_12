@@ -6,9 +6,8 @@ from django.utils import timezone
 class Status(models.Model):
     eventIsOver = models.BooleanField(default=False)
 
-def __str__(self):
+    def __str__(self):
         return f"{self.eventIsOver}"
-
 
 
 class Client(models.Model):
@@ -22,17 +21,23 @@ class Client(models.Model):
     dateCreated = models.DateTimeField(default=timezone.now)
     dateUpdated = models.DateTimeField(default=timezone.now)
     salesContact = models.ForeignKey(
-        to=settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="clients"
+        to=settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT,
+        related_name="clients",
+        limit_choices_to={"isSale": True},
     )
 
     def __str__(self):
-        return f"{self.pk, self.firstName, self.lastName, self.salesContact}"
+        return f"{self.pk, self.firstName, self.lastName, self.salesContact.username}"
 
 
 class Contract(models.Model):
 
     salesContact = models.ForeignKey(
-        to=settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="contracts"
+        to=settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT,
+        related_name="contracts",
+        limit_choices_to={"isSale": True},
     )
     client = models.ForeignKey(
         to=Client, on_delete=models.PROTECT, related_name="client_contracts"
@@ -44,7 +49,7 @@ class Contract(models.Model):
     paiementDue = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"{self.pk, self.salesContact, self.client, self.amount}"
+        return f"{self.pk, self.salesContact.username, self.client.pk, self.client.firstName, self.client.lastName, self.amount}"
 
 
 class Event(models.Model):
@@ -58,6 +63,7 @@ class Event(models.Model):
         to=settings.AUTH_USER_MODEL,
         on_delete=models.PROTECT,
         related_name="support_events",
+        limit_choices_to={"isSupport": True},
     )
     eventStatus = models.ForeignKey(
         to=Status, on_delete=models.PROTECT, related_name="status_events"
@@ -67,4 +73,4 @@ class Event(models.Model):
     notes = models.TextField(max_length=8192, blank=True)
 
     def __str__(self):
-        return f"{self.pk, self.supportContact, self.client, self.eventStatus}"
+        return f"{self.pk, self.supportContact.username, self.client.pk, self.client.firstName, self.client.lastName, self.eventStatus.eventIsOver}"
