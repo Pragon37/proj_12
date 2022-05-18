@@ -49,7 +49,9 @@ class Contract(models.Model):
     paiementDue = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"{self.pk, self.salesContact.username, self.client.pk, self.client.firstName, self.client.lastName, self.amount}"
+        return (f"{self.pk, self.salesContact.username}"
+                f"{self.client.pk, self.client.firstName}"
+                f"{ self.client.lastName, self.amount}")
 
 
 class Event(models.Model):
@@ -73,4 +75,6 @@ class Event(models.Model):
     notes = models.TextField(max_length=8192, blank=True)
 
     def __str__(self):
-        return f"{self.pk, self.supportContact.username, self.client.pk, self.client.firstName, self.client.lastName, self.eventStatus.eventIsOver}"
+        return (f"{self.pk, self.supportContact.username}"
+                f"{self.client.pk, self.client.firstName}"
+                f"{self.client.lastName, self.eventStatus.eventIsOver}")

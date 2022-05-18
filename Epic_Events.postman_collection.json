@@ -1,0 +1,952 @@
+{
+	"info": {
+		"_postman_id": "d3daeb24-deaf-4ed6-98b8-63c082a7f191",
+		"name": "Epic Events",
+		"description": "This Postman collection consists of aof basic tests to verify the endpoints of the Epic Events API.\n\nIt comprises 6 sections that provide test for:\n\nLogin\n\nView allowed for sales team\n\nView allowed for support team\n\nCreation of Client/Contract/Event\n\nUpdate of client\n\nUpdate of event",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "log_support_to_client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Check successful login for support user"
+					},
+					"response": []
+				},
+				{
+					"name": "log_sales_to_client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Check successful login for sales user"
+					},
+					"response": []
+				},
+				{
+					"name": "log_sales_to_client_bad_password",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Check that bad password doesn't allow login"
+					},
+					"response": []
+				},
+				{
+					"name": "log_sales_to_client_bad_username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Check that bad username doesn't allow login"
+					},
+					"response": []
+				}
+			],
+			"description": "Verify that Sales and Support users can log in the API"
+		},
+		{
+			"name": "Sales_can_read",
+			"item": [
+				{
+					"name": "Read_client_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can view all client list."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_own_client_instance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can view instance of assigned client."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_contract_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can view contract list."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_own_contract_instance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "can view assigned contract list."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_event_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can view contract list."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_client_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter client using email address."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_client_list_1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter client client using last name and email address."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_contract_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter contract using amount."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_contract_list_1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter contract using email address and amount."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_event_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter event using last name."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_event_list_bad_filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Try filtering with a non existing value."
+					},
+					"response": []
+				}
+			],
+			"description": "Verify what is possible to view for sales users.\n\nVerify the effect of different filters."
+		},
+		{
+			"name": "Support_can_read",
+			"item": [
+				{
+					"name": "Read_client_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Verify what is possible to view for support users.\n\nVerify the effect of different filters."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_contract_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can view contract list."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_event_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can view contract list."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_client_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter client using email address."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_client_list_1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter client client using last name and email address."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_contract_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter contract using amount."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_contract_list_1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter contract using email address and amount."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_event_list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Can filter event using last name."
+					},
+					"response": []
+				},
+				{
+					"name": "Read_filtered_event_list_bad_filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Try filtering with a non existing value."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create_client_contract_event",
+			"item": [
+				{
+					"name": "Sales_add_client",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Scott\",\r\n    \"lastName\": \"Porter\",\r\n    \"email\": \"scottporter@company4.com\",\r\n    \"phone\": \"77\",\r\n    \"mobile\": \"771\",\r\n    \"companyName\": \"company5\",\r\n    \"dateCreated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"salesContact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Client/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Client",
+								""
+							]
+						},
+						"description": "Sales add a new client."
+					},
+					"response": []
+				},
+				{
+					"name": "Sales_add_event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": 8,\r\n    \"dateCreated\": \"2022-09-16T07:42:25.709209Z\",\r\n    \"dateUpdated\": \"2022-09-16T07:42:25.709209Z\",\r\n    \"supportContact\": 4,\r\n    \"eventStatus\": 2,\r\n    \"attendees\": 28,\r\n    \"eventDate\": \"2022-10-16T07:42:25.709209Z\",\r\n    \"notes\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Event/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Event",
+								""
+							]
+						},
+						"description": "Sales add a new event"
+					},
+					"response": []
+				},
+				{
+					"name": "Support_try_adding_event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": 8,\r\n    \"dateCreated\": \"2022-09-16T07:42:25.709209Z\",\r\n    \"dateUpdated\": \"2022-09-16T07:42:25.709209Z\",\r\n    \"supportContact\": 4,\r\n    \"eventStatus\": 2,\r\n    \"attendees\": 28,\r\n    \"eventDate\": \"2022-10-16T07:42:25.709209Z\",\r\n    \"notes\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Event/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Event",
+								""
+							]
+						},
+						"description": "Support is not allowed to add event."
+					},
+					"response": []
+				},
+				{
+					"name": "Support_try_adding_client",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Scott\",\r\n    \"lastName\": \"Porter\",\r\n    \"email\": \"scottporter@company4.com\",\r\n    \"phone\": \"77\",\r\n    \"mobile\": \"771\",\r\n    \"companyName\": \"company5\",\r\n    \"dateCreated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"salesContact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Client/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Client",
+								""
+							]
+						},
+						"description": "Support is not allowed to add client."
+					},
+					"response": []
+				},
+				{
+					"name": "Support_try_adding_contract",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Scott\",\r\n    \"lastName\": \"Porter\",\r\n    \"email\": \"scottporter@company4.com\",\r\n    \"phone\": \"77\",\r\n    \"mobile\": \"771\",\r\n    \"companyName\": \"company5\",\r\n    \"dateCreated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"salesContact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Client/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Client",
+								""
+							]
+						},
+						"description": "Support is not allowed to add contract."
+					},
+					"response": []
+				},
+				{
+					"name": "Sales_add_contract",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"salesContact\": 2,\r\n    \"client\": 7,\r\n    \"dateCreated\": \"2022-05-18T11:29:00Z\",\r\n    \"dateUpdated\": \"2022-05-18T11:29:00Z\",\r\n    \"status\": false,\r\n    \"amount\": 799.0,\r\n    \"paiementDue\": \"2022-07-07T11:29:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Contract/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Contract",
+								""
+							]
+						},
+						"description": "Sales add contract."
+					},
+					"response": []
+				},
+				{
+					"name": "Sales_try_adding_existing_client",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Scott\",\r\n    \"lastName\": \"Porter\",\r\n    \"email\": \"scottporter@company4.com\",\r\n    \"phone\": \"77\",\r\n    \"mobile\": \"771\",\r\n    \"companyName\": \"company5\",\r\n    \"dateCreated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:29:20.942377Z\",\r\n    \"salesContact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Client/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Client",
+								""
+							]
+						},
+						"description": "Sales not allowed to add existing client."
+					},
+					"response": []
+				}
+			],
+			"description": "Verify that client/contract/event can be added by sales users only."
+		},
+		{
+			"name": "Update_client",
+			"item": [
+				{
+					"name": "Sales_update_assigned_client",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Scott\",\r\n    \"lastName\": \"Porter\",\r\n    \"email\": \"scottporter@company4.com\",\r\n    \"phone\": \"77\",\r\n    \"mobile\": \"771\",\r\n    \"companyName\": \"company5\",\r\n    \"dateCreated\": \"2022-03-13T11:10:00Z\",\r\n    \"dateUpdated\": \"2022-03-15T11:10:00Z\",\r\n    \"salesContact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Client/10/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Client",
+								"10",
+								""
+							]
+						},
+						"description": "Sales update existing assigned client."
+					},
+					"response": []
+				},
+				{
+					"name": "Support_try_updating_client",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Scott\",\r\n    \"lastName\": \"Porter\",\r\n    \"email\": \"scottporter@company4.com\",\r\n    \"phone\": \"77\",\r\n    \"mobile\": \"771\",\r\n    \"companyName\": \"company5\",\r\n    \"dateCreated\": \"2022-03-13T11:10:00Z\",\r\n    \"dateUpdated\": \"2022-03-15T11:10:00Z\",\r\n    \"salesContact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Client/10/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Client",
+								"10",
+								""
+							]
+						},
+						"description": "Support not allowed to update client."
+					},
+					"response": []
+				},
+				{
+					"name": "Sales_try_updating_non_assigned_client Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sales1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Scott\",\r\n    \"lastName\": \"Porter\",\r\n    \"email\": \"scottporter@company4.com\",\r\n    \"phone\": \"77\",\r\n    \"mobile\": \"771\",\r\n    \"companyName\": \"company5\",\r\n    \"dateCreated\": \"2022-03-13T11:10:00Z\",\r\n    \"dateUpdated\": \"2022-03-15T11:10:00Z\",\r\n    \"salesContact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Client/10/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Client",
+								"10",
+								""
+							]
+						},
+						"description": "Sales not allowed to update unassigned client."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update_event",
+			"item": [
+				{
+					"name": "Support_update_assigned_event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "support1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": 8,\r\n    \"dateCreated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"supportContact\": 4,\r\n    \"eventStatus\": 2,\r\n    \"attendees\": 34,\r\n    \"eventDate\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"notes\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Event/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Event",
+								"8",
+								""
+							]
+						},
+						"description": "support allowed to update assigned event."
+					},
+					"response": []
+				},
+				{
+					"name": "Support_try_updating_non_assigned_event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "support1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": 8,\r\n    \"dateCreated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"supportContact\": 4,\r\n    \"eventStatus\": 2,\r\n    \"attendees\": 34,\r\n    \"eventDate\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"notes\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Event/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Event",
+								"8",
+								""
+							]
+						},
+						"description": "support not allowed to update non assigned event."
+					},
+					"response": []
+				},
+				{
+					"name": "Support_try_updating_past_event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "support1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": 8,\r\n    \"dateCreated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"supportContact\": 4,\r\n    \"eventStatus\": 2,\r\n    \"attendees\": 34,\r\n    \"eventDate\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"notes\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Event/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Event",
+								"8",
+								""
+							]
+						},
+						"description": "Support not allowed to update past event."
+					},
+					"response": []
+				},
+				{
+					"name": "Sale_try_updating_event",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "support1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pierre11",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": 8,\r\n    \"dateCreated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"dateUpdated\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"supportContact\": 4,\r\n    \"eventStatus\": 2,\r\n    \"attendees\": 34,\r\n    \"eventDate\": \"2022-05-16T07:42:25.709209Z\",\r\n    \"notes\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Event/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Event",
+								"8",
+								""
+							]
+						},
+						"description": "Sales not allowed to update event."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

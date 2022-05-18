@@ -1,6 +1,5 @@
-from django.shortcuts import get_object_or_404
-from rest_framework.permissions import SAFE_METHODS, IsAuthenticated, BasePermission
-from .models import Client, Contract, Event, Status
+from rest_framework.permissions import BasePermission
+from .models import Client, Status
 from users.models import User
 
 """ To check that a user belongs to django administration group 'SalesGroup':
@@ -36,6 +35,9 @@ class AllowAccessToEvent(BasePermission):
         eventIsOver = Status.objects.get(pk=eventStatusId).eventIsOver
         support_contact = User.objects.get(pk=supportContactId).username
         isCurrentUserSalesContact = f"{request.user}" == f"{sales_contact}"
+        print('ISCURRENTSALESCONTACT', isCurrentUserSalesContact)
+        print('SALESCONTACT = ', sales_contact)
+        print('CURRENT_USER = ', request.user)
         isCurrentUserSupportContact = f"{request.user}" == support_contact
         return isCurrentUserSalesContact or (
             isCurrentUserSupportContact and not eventIsOver

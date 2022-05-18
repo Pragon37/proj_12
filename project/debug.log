@@ -1,0 +1,68 @@
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\core\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\core\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\core\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+F:\Pierre\OpenClassrooms\PROJ_12\dev\project\project\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /api/Event/1/
+Not Found: /favicon.ico
+Forbidden: /api/Event/1/
+Not Found: /api/Event/1/
+Forbidden: /api/Contract/2/
+Forbidden: /api/Contract/
+Forbidden: /api/Client/
+Forbidden: /api/Contract/
+Forbidden: /api/Event/
+Forbidden: /api/Client/
+Bad Request: /api/Client/
+Internal Server Error: /api/Contract
+Traceback (most recent call last):
+  File "F:\Pierre\OpenClassrooms\PROJ_12\dev\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\Pierre\OpenClassrooms\PROJ_12\dev\env\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "F:\Pierre\OpenClassrooms\PROJ_12\dev\env\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "F:\Pierre\OpenClassrooms\PROJ_12\dev\env\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/Contract/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Forbidden (CSRF token from POST incorrect.): /admin/login/
+Forbidden (CSRF token from POST incorrect.): /admin/login/
+Not Found: /admin/admin
+Forbidden: /api/Event/4/
